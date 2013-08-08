@@ -4,3 +4,9 @@ tom:
   email: "khem@gmail.com"
   profile_name: "tom"
 
+jason:
+ first_name: "Jason"
+ last_name: "Seifer"
+ email: "jason@gmail.com"
+ profile_name: "jason"
+
