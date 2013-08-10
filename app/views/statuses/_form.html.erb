@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 9b908ce970dce0295987b8ab10993d8bae3ffc2f
 <%= simple_form_for(@status, html: {class: "form-horizontal"}) do |f| %>
   <% if @status.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +11,6 @@
       </ul>
     </div>
   <% end %>
-<<<<<<< HEAD
   <div class="form-group">
     <%= f.input :user_id, collection: User.all, label_method: :full_name %>
     <%= f.input :content %>
@@ -22,13 +18,4 @@
   <div class="form-control">
     <%= f.button :submit %>
   </div>
-
-=======
-    
-    <%= f.input :user_id, collection: User.all, label_method: :full_name %>
-    <%= f.input :content %>
-  <div class="form-controls">
-    <%= f.button :submit %>
-  </div>
->>>>>>> 9b908ce970dce0295987b8ab10993d8bae3ffc2f
 <% end %>

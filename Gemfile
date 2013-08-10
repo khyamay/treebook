@@ -5,7 +5,6 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-<<<<<<< HEAD
 gem 'devise'
 gem 'simple_form'
 
@@ -16,12 +15,7 @@ group :production do
 gem 'pg'	
 end
 
-=======
-gem 'sqlite3'
-gem 'devise'
-gem 'simple_form'
 
->>>>>>> 9b908ce970dce0295987b8ab10993d8bae3ffc2f
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
