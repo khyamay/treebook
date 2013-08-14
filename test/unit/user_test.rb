@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+should have_many(:user_friendships)
+should have_many(:friends)
+
   test "a user should enter a first name" do
    user = User.new
   	  assert !user.save
@@ -30,19 +33,34 @@ class UserTest < ActiveSupport::TestCase
  test "a user should have a profile name without spaces" do
  	 user = User.new(first_name: 'jason', last_name: 'seifer', email: 'jason@gmail.com')
   user.password = user.password_confirmation = 'jason1234'
+
+  user.profile_name = "Contains spaces"
   
  	assert !user.save
  	assert !user.errors[:profile_name].empty?
  	assert user.errors[:profile_name].include?("Must be formatted correctly.")
  end
 
- test "a user can have a correctly formatted profile name" do
-  user = User.new(first_name: 'jason', last_name: 'seifer', email: 'jason@gmail.com')
-  user.password = user.password_confirmation = 'jason1234'
+ test "a user should have a profile name" do
+    user = User.new(first_name: 'Jason', last_name: 'Seifer', email: 'jason2@teamtreehouse.com')
+    user.password = user.password_confirmation = 'asdfasdf'
 
-  user.profile_name = 'jason'
-  assert user.valid?
+    user.profile_name = 'jasonseifer_1'
+    assert user.valid?
 end 
+
+ test "that no error is raised when trying to access a friendship" do
+  assert_nothing_raised do
+    users(:tom).friends
+  end
+end
+
+ test "that creating friendships on a user works" do
+  users(:tom).friends << users(:mike)
+  users(:tom).friends.reload
+  assert users(:tom).friends.include?(users(:mike))
+
+ end
 
 end
 

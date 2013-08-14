@@ -5,8 +5,13 @@ tom:
   profile_name: "tom"
 
 jason:
- first_name: "Jason"
- last_name: "Seifer"
- email: "jason@gmail.com"
- profile_name: "jason"
+  first_name: "Jason"
+  last_name: "Seifer"
+  email: "jason@gmail.com"
+  profile_name: "jason"
 
+mike:
+  first_name: "Mike"
+  last_name: "The Frog"
+  email: "mike@frog.com"
+  profile_name: "mikethefrog"
