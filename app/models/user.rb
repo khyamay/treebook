@@ -28,6 +28,12 @@ class User < ActiveRecord::Base
   def full_name 
   	first_name + " " + last_name
   end
+  
+  def to_param
+
+   profile_name
+  end
+
   def gravatar_url
   
     stripped_email = email.strip
